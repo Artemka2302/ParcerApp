@@ -3,6 +3,8 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 import os
+from Parcer1 import parc
+
 
 
 app = Flask(__name__)
@@ -19,6 +21,10 @@ def index():
         items=['Python', 'Flask', 'Jinja']
     )
 
+
+@app.route('/parcing')
+def parcing():
+    return render_template('parcing.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
